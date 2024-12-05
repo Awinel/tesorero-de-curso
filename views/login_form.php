@@ -11,17 +11,20 @@
 
     <div class="form-container">
 
-        <form action="" method="post">
+        <form action="account/" method="post">
             <h1>Inicio de sesión</h1>
-
+            <?php if (isset($message)) {
+                echo $message;
+            } ?>
             <label for="rut">Rut</label><br>
-            <input type="number" name="rut" require placeholder="Ej: 11.111.111-1" id="rut"><br>
+            <input type="int" name="rut" require placeholder="Ej: 11.111.111-1" id="rut"><br>
 
             <label for="password">Contraseña</label><br>
             <input type="password" name="password" require placeholder="Ej: 1111" id="password"><br>
 
 
             <input type="submit" name="submit" value="Iniciar Sesión" class="form-btn">
+            <input type="hidden" name="action" value="login">
         </form>
 
     </div>
