@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    margin: auto;
+    background-color: red;
+}
+
+h1 {
+    color: red;
+}
