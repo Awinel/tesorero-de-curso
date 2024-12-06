@@ -12,7 +12,7 @@
 
     <div class="form-container">
 
-        <form action="account/" method="post">
+        <form action="/tesorero-de-curso/account/" method="post">
             <h1>Inicio de sesión</h1>
             <?php if (isset($message)) {
                 echo $message;
