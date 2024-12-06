@@ -22,14 +22,13 @@ switch ($action) {
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $user_type = filter_input(INPUT_POST, 'user_type', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        
+
 
         if (empty($full_name) || empty($rut) || empty($password) || empty($user_type)) {
             $message = "<p>Por favor rellena los datos faltantes.</p>";
             include "../views/register_form.php";
         }
 
-        // Validate and create the user
         try {
 
             $result = User::createUser($rut, $password, $full_name, $user_type);  // This will create the user and save it to the database
