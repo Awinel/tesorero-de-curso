@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>Hola, <?php $user["full_name"]; ?></h1>
+    <h1>Hola</h1>
 </body>
 
 </html>

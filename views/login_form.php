@@ -18,10 +18,12 @@
                 echo $message;
             } ?>
             <label for="rut">Rut</label><br>
-            <input type="int" name="rut" require placeholder="Ej: 11.111.111-1" id="rut"><br>
+            <input type="int" name="rut" require placeholder="Ej: 11111111-1" id="rut" pattern="\d{7,8}-[0-9Kk]" <?php if (isset($rut)) {
+                                                                                                                        echo "value='$rut'";
+                                                                                                                    } ?> required><br>
 
             <label for="password">Contraseña</label><br>
-            <input type="password" name="password" require placeholder="Ej: 1111" id="password"><br>
+            <input type="password" name="password" id="password" pattern=".{4, }" required><br>
 
 
             <input type="submit" name="submit" value="Iniciar Sesión" class="form-btn">

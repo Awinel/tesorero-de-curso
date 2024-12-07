@@ -11,8 +11,9 @@ class User
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':rut', $rut, PDO::PARAM_STR);
         $stmt->execute();
-
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $user_data;
     }
 
     // Method to create a new user
@@ -38,5 +39,22 @@ class User
 
         // Return the indication of success (row changed)
         return $rowschanged;
+    }
+
+    public static function checkExistingRut($rut)
+    {
+        $pdo = tesorerodecurso();
+
+        $sql = 'SELECT rut FROM user_information WHERE rut = :rut';
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':rut', $rut, PDO::PARAM_STR);
+        $stmt->execute();
+        $matchRut = $stmt->fetch(PDO::FETCH_NUM);
+        $stmt->closeCursor();
+        if (empty($matchRut)) {
+            return 0;
+        } else {
+            return 1;
+        }
     }
 }
