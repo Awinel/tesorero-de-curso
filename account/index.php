@@ -28,7 +28,6 @@ switch ($action) {
         }
 
         $sanitizeRut = sanitizeRUT($rut);
-        $validatePassword = validatePassword($password);
         $checkRut = USER::checkExistingRut($rut);
 
         if ($checkRut) {
@@ -38,7 +37,7 @@ switch ($action) {
         }
 
         try {
-            $result = User::createUser($sanitizeRut, $validatePassword, $full_name, $user_type);  // This will create the user and save it to the database
+            $result = User::createUser($sanitizeRut, $password, $full_name, $user_type);  // This will create the user and save it to the database
             $message = "<p class='message'>Usuario registrado con exito!</p>";
             include "../views/admin_page.php";
         } catch (Exception $e) {
@@ -77,9 +76,9 @@ switch ($action) {
         }
 
         // A valid user exists, log them in
-        $_SESSION['loggedin'] = TRUE;
+        // $_SESSION['loggedin'] = TRUE;
         // Remove the password from the array
-        array_splice($user_information, 2, 1);
+        // array_splice($user_information, 2, 1);
 
 
         break;
