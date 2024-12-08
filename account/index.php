@@ -10,7 +10,9 @@ if ($action == NULL) {
 }
 
 // Check for existing session and logged-in user
-
+if (isset($_SESSION["user_data"])) {
+    $cookieName = $_SESSION["user_data"]["full_name"];
+}
 
 switch ($action) {
     case "register":
@@ -76,12 +78,22 @@ switch ($action) {
         }
 
         // A valid user exists, log them in
-        // $_SESSION['loggedin'] = TRUE;
+        $_SESSION['loggedin'] = TRUE;
         // Remove the password from the array
-        // array_splice($user_information, 2, 1);
+        array_splice($user_information, 2, 1);
 
+        $_SESSION["user_data"] = $user_information;
 
+        $cookieName = $_SESSION["user_data"]["full_name"];
+
+        include "../views/admin_page.php";
         break;
+
+    case 'logout':
+
+        include "../views/logout.php";
+        break;
+
     default:
         // Default case if no action is passed
         include '../views/login_form.php';

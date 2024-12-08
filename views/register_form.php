@@ -1,3 +1,7 @@
+<?php
+checkClientAccess();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

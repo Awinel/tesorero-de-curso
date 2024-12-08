@@ -1,3 +1,7 @@
+<?php
+checkClientAccess();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,9 +19,9 @@
             <h3>Hola Administrador</h3>
             <h1>Bienvenido</h1>
             <p>Aqui podras administrar nuevos usuarios, agregar o quitar segun corresponda</p>
-            <a href="/tesorero-de-curso/views/register_form" class="btn">Registrar nuevo usuario</a>
-            <a href="/tesorero-de-curso/views/delete_form.php" class="btn">Quitar usuario</a>
-            <a href="/tesorero-de-curso/views/logout.php" class="btn">Salir</a>
+            <a href="/tesorero-de-curso/account/index.php?action=register" class="btn">Registrar nuevo usuario</a>
+            <a href="/tesorero-de-curso/account/index.php?action=delete" class="btn">Quitar usuario</a>
+            <a href="/tesorero-de-curso/account/index.php?action=logout" class="btn">Salir</a>
 
         </div>
 

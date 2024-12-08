@@ -57,4 +57,6 @@ class User
             return 1;
         }
     }
+
+    public static function deleteUser($rut, $user_id) {}
 }

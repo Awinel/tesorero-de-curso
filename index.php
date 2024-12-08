@@ -9,5 +9,5 @@ switch ($action) {
         include 'views/500.php';
         break;
     default:
-        include 'views/register_form.php';
+        include 'views/login_form.php';
 }
