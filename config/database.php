@@ -17,7 +17,6 @@ function tesorerodecurso()
     try {
         // Create a PDO instance and return it
         $link = new PDO($dsn, $username, $password, $options);
-        var_dump($link);
         return $link;
     } catch (PDOException $e) {
         // Redirect to a custom error page if connection fails

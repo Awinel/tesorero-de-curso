@@ -8,6 +8,11 @@
     font-family: "Gabarito", sans-serif;
 }
 
+body {
+    background-color: #648DE5;
+}
+
+
 /* -------------------form----------------------- */
 
 .form-container {
@@ -15,10 +20,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-body {
-    background-color: #648DE5;
 }
 
 form {
@@ -31,6 +32,7 @@ form {
 form h1 {
     margin-bottom: 30px;
     font-weight: 700;
+    text-align: center;
 }
 
 form p {
@@ -42,4 +44,15 @@ form input {
     margin-bottom: 20px;
     padding: 5px;
     font-size: 16px;
+    width: 100%;
+}
+
+select {
+    margin-bottom: 20px;
+    padding: 5px 0 5px 5px;
+    font-size: 16px;
+}
+
+#user_type {
+    width: 100%;
 }
