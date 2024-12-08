@@ -37,7 +37,7 @@ checkClientAccess();
             <input type="submit" name="submit" value="Registrar" class="form-btn">
             <input type="hidden" name="action" value="register">
         </form>
-        <a href="tesorero-de-curso/account/index.php?action=admin" class="btn">Atras</a>
+        <a href="/tesorero-de-curso/account/index.php?action=admin" class="btn">Atras</a>
     </div>
 
 </body>

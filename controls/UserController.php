@@ -12,10 +12,9 @@ function sanitizeRUT($rut)
 // Function to check client access
 function checkClientAccess()
 {
+    // Ensure the session has started
     if (!isset($_SESSION['loggedin'])) {
         header('Location: /tesorero-de-curso/');
-    } elseif (isset($_SESSION['user_data']['user_type']) == 1) {
-        include "../views/user.php";
         exit;
     }
 }

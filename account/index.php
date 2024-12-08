@@ -15,6 +15,11 @@ if (isset($_SESSION["user_data"])) {
 }
 
 switch ($action) {
+    case 'admin':
+
+        include "../views/admin_page.php";
+        break;
+
     case "register":
         // Get the user input from POST request
         $full_name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -86,17 +91,21 @@ switch ($action) {
 
         $cookieName = $_SESSION["user_data"]["full_name"];
 
-        include "../views/admin_page.php";
+        if ($_SESSION["user_data"]["user_type"] == 2) {
+            include "../views/admin_page.php";
+            exit;
+        } else {
+            include "../views/admin_page.php";
+            exit;
+        }
         break;
 
+    case 'delete':
+        include "../views/delete_form.php";
+        break;
     case 'logout':
 
         include "../views/logout.php";
-        break;
-
-    case 'admin':
-
-        include "../views/admin_page.php";
         break;
 
     default:
