@@ -14,6 +14,31 @@ checkClientAccess();
 
 <body>
 
+    <h1>Usuarios Registrados</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre Completo</th>
+                <th>RUT</th>
+                <th>Tipo de usuario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($allUsers as $user) : ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($user['full_name']); ?></td>
+                    <td><?php echo htmlspecialchars($user['rut']); ?></td>
+                    <td>
+                        <?php
+                        echo $user['user_type'] == 2 ? 'Administrator' : 'User';
+                        ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
     <div class="form-container">
 
         <form action="/tesorero-de-curso/account/" method="post">

@@ -3,6 +3,17 @@ require_once '../config/database.php';
 
 class User
 {
+    // Method to get all the users
+    public static function getAllUsers()
+    {
+        $pdo = tesorerodecurso();
+        $sql = "SELECT user_id, full_name, rut, user_type FROM user_information";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $users;
+    }
     // Method to find user by RUT
     public static function findByRUT($rut)
     {

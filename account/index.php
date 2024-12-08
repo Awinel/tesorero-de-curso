@@ -101,6 +101,10 @@ switch ($action) {
         break;
 
     case 'delete':
+
+        $allUsers = User::getAllUsers();
+
+
         include "../views/delete_form.php";
         break;
     case 'logout':
