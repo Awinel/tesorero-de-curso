@@ -94,6 +94,11 @@ switch ($action) {
         include "../views/logout.php";
         break;
 
+    case 'admin':
+
+        include "../views/admin_page.php";
+        break;
+
     default:
         // Default case if no action is passed
         include '../views/login_form.php';
