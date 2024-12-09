@@ -3,11 +3,10 @@
 
 function tesorerodecurso()
 {
-    // For security reasons I leave this empty in github
-    $server = "";
-    $dbname = "";
-    $username = "";
-    $password = "";
+    $server = "localhost";
+    $dbname = "tesorerodecurso";
+    $username = "iClient";
+    $password = "xj(CrZJp_*Lo]fMo";
 
     // Set up DSN (Data Source Name)
     $dsn = "mysql:host=$server;dbname=$dbname";
