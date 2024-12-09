@@ -15,43 +15,45 @@ checkClientAccess();
 <body>
 
     <h1>Usuarios Registrados</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre Completo</th>
-                <th>RUT</th>
-                <th>Tipo de usuario</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($allUsers as $user) : ?>
+    <div class="table-container">
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo htmlspecialchars($user['full_name']); ?></td>
-                    <td><?php echo htmlspecialchars($user['rut']); ?></td>
-                    <td>
-                        <?php
-                        echo $user['user_type'] == 2 ? 'Administrator' : 'User';
-                        ?>
-                    </td>
+                    <th>Selecionar</th>
+                    <th>Full Name</th>
+                    <th>RUT</th>
+                    <th>User Type</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($allUsers as $user) : ?>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="selected_users[]" value="<?php echo htmlspecialchars($user['user_id']); ?>">
+                        </td>
+                        <td><?php echo htmlspecialchars($user['full_name']); ?></td>
+                        <td><?php echo htmlspecialchars($user['rut']); ?></td>
+                        <td>
+                            <?php
+                            echo $user['user_type'] == 2 ? 'Administrator' : 'User';
+                            ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
 
-    <div class="form-container">
-
-        <form action="/tesorero-de-curso/account/" method="post">
-            <label for="user_id">User ID:</label><br>
-            <input type="number" id="user_id" name="user_id" required placeholder="Enter User ID"><br><br>
-
-            <label for="rut">RUT:</label><br>
-            <input type="text" id="rut" name="rut" required placeholder="Enter RUT (e.g., 198672149)"><br><br>
-
-            <input type="submit" value="Borrar Usuario" class="form-btn">
-            <input type="hidden" name="action" value="delete">
-        </form>
+        <div class="form-container">
+            <form method="POST" action="/tesorero-de-curso/account/index.php?action=delete">
+                <button type="submit" name="action" value="edit" class="btn">Edit Selected</button>
+                <button type="submit" name="action" value="delete" class="btn">Delete Selected</button>
+            </form>
+        </div>
         <a href="/tesorero-de-curso/account/index.php?action=admin" class="btn">Atras</a>
+    </div>
+
+
+
     </div>
 
 </body>
