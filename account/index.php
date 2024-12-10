@@ -95,7 +95,7 @@ switch ($action) {
             include "../views/admin_page.php";
             exit;
         } else {
-            include "../views/user_page.php";
+            include "../views/user.php";
             exit;
         }
         break;

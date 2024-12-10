@@ -10,6 +10,7 @@
 
 <body>
     <h1>Hola <?php echo $cookieName ?></h1>
+    <a href="/tesorero-de-curso/account/index.php?action=logout" class="btn">Salir</a>
 </body>
 
 </html>
