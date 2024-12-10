@@ -95,17 +95,17 @@ switch ($action) {
             include "../views/admin_page.php";
             exit;
         } else {
-            include "../views/admin_page.php";
+            include "../views/user_page.php";
             exit;
         }
         break;
 
-    case 'delete':
+    case 'administer':
 
         $allUsers = User::getAllUsers();
 
 
-        include "../views/delete_form.php";
+        include "../views/edit_form.php";
         break;
     case 'logout':
 
