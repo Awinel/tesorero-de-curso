@@ -82,13 +82,21 @@ h1 {
 
 table {
     background-color:#eceff3;
-    
+    text-align: center;
 }
 
 th, td {
     border: 1px solid gray;
+    padding: 5px;
 }
 
-.form-container-edit-delete {
-    background-color: red;
+.table-container .form-container {
+    justify-content: start;
+    height: auto;
+}
+
+.table-container form {
+    background-color: #648DE5;
+    text-align: center;
+    border-radius: 0;
 }

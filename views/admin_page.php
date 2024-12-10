@@ -20,7 +20,7 @@ checkClientAccess();
             <h1>Bienvenido</h1>
             <p>Aqui podras administrar nuevos usuarios, agregar o quitar segun corresponda</p>
             <a href="/tesorero-de-curso/account/index.php?action=register" class="btn">Registrar nuevo usuario</a>
-            <a href="/tesorero-de-curso/account/index.php?action=administer" class="btn">Quitar usuario</a>
+            <a href="/tesorero-de-curso/account/index.php?action=administer" class="btn">Editar usuarios</a>
             <a href="/tesorero-de-curso/account/index.php?action=logout" class="btn">Salir</a>
 
         </div>

@@ -35,7 +35,7 @@ checkClientAccess();
                         <td><?php echo htmlspecialchars($user['rut']); ?></td>
                         <td>
                             <?php
-                            echo $user['user_type'] == 2 ? 'Administrator' : 'User';
+                            echo $user['user_type'] == 2 ? 'Administrador' : 'Usuario';
                             ?>
                         </td>
                     </tr>
@@ -45,8 +45,8 @@ checkClientAccess();
 
         <div class="form-container">
             <form method="POST" action="/tesorero-de-curso/account/index.php?action=delete">
-                <button type="submit" name="action" value="edit" class="btn">Edit Selected</button>
-                <button type="submit" name="action" value="delete" class="btn">Delete Selected</button>
+                <button type="submit" name="action" value="edit" class="btn">Editar Selectionado</button>
+                <button type="submit" name="action" value="delete" class="btn">Borrar Selectionado</button>
             </form>
         </div>
         <a href="/tesorero-de-curso/account/index.php?action=admin" class="btn">Atras</a>
