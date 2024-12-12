@@ -16,39 +16,36 @@ checkClientAccess();
 
     <h1>Usuarios Registrados</h1>
     <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Selecionar</th>
-                    <th>Full Name</th>
-                    <th>RUT</th>
-                    <th>User Type</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($allUsers as $user) : ?>
+        <form method="POST" action="/tesorero-de-curso/userManager/">
+            <table>
+                <thead>
                     <tr>
-                        <td>
-                            <input type="checkbox" name="selected_users[]" value="<?php echo htmlspecialchars($user['user_id']); ?>">
-                        </td>
-                        <td><?php echo htmlspecialchars($user['full_name']); ?></td>
-                        <td><?php echo htmlspecialchars($user['rut']); ?></td>
-                        <td>
-                            <?php
-                            echo $user['user_type'] == 2 ? 'Administrador' : 'Usuario';
-                            ?>
-                        </td>
+                        <th>Seleccionar</th>
+                        <th>Nombre</th>
+                        <th>RUT</th>
+                        <th>Tipo de Usuario</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($allUsers as $user): ?>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="selected_users[]" value="<?php echo htmlspecialchars($user['user_id']); ?>">
+                            </td>
+                            <td><?php echo htmlspecialchars($user['full_name']); ?></td>
+                            <td><?php echo htmlspecialchars($user['rut']); ?></td>
+                            <td><?php echo $user['user_type'] == 2 ? 'Administrador' : 'Usuario'; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <?php if (isset($message)) {
+                echo $message;
+            } ?>
+            <button type="submit" name="action" value="edit" class="btn">Editar Selectionado</button>
+            <button type="submit" name="action" value="delete" class="btn">Borrar Seleccionados</button>
+        </form>
 
-        <div class="form-container">
-            <form method="POST" action="/tesorero-de-curso/account/index.php?action=delete">
-                <button type="submit" name="action" value="edit" class="btn">Editar Selectionado</button>
-                <button type="submit" name="action" value="delete" class="btn">Borrar Selectionado</button>
-            </form>
-        </div>
         <a href="/tesorero-de-curso/userManager/index.php?action=admin" class="btn">Atras</a>
     </div>
 

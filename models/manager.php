@@ -5,19 +5,13 @@ class Manager
 {
 
     // Method to erase user
-    public static function deleteUser($rut, $user_id)
+    public static function deleteUserById($userId)
     {
         $pdo = tesorerodecurso();
-
-
-        $sql = 'DELETE FROM user_information WHERE user_id = :user_id AND rut = :rut';
+        $sql = "DELETE FROM user_information WHERE user_id = :user_id";
         $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
-        $stmt->bindValue(':rut', $rut, PDO::PARAM_STR);
+        $stmt->bindValue(':user_id', $userId, PDO::PARAM_INT);
         $stmt->execute();
-        $rowschanged = $stmt->rowCount();
         $stmt->closeCursor();
-
-        return $rowschanged;
     }
 }
