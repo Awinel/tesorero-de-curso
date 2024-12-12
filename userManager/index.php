@@ -45,6 +45,11 @@ switch ($action) {
         include "../views/edit_form.php";
         break;
 
+    case 'edit':
+
+        include "../views/edit_form.php";
+        break;
+
     case 'manage':
 
         $allUsers = User::getAllUsers();
