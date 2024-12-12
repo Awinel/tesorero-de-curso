@@ -15,10 +15,6 @@ if (isset($_SESSION["user_data"])) {
 }
 
 switch ($action) {
-    case 'admin':
-
-        include "../views/admin_page.php";
-        break;
 
     case "register":
         // Get the user input from POST request
@@ -100,13 +96,6 @@ switch ($action) {
         }
         break;
 
-    case 'administer':
-
-        $allUsers = User::getAllUsers();
-
-
-        include "../views/edit_form.php";
-        break;
     case 'logout':
 
         include "../views/logout.php";

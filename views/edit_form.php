@@ -49,7 +49,7 @@ checkClientAccess();
                 <button type="submit" name="action" value="delete" class="btn">Borrar Selectionado</button>
             </form>
         </div>
-        <a href="/tesorero-de-curso/account/index.php?action=admin" class="btn">Atras</a>
+        <a href="/tesorero-de-curso/userManager/index.php?action=admin" class="btn">Atras</a>
     </div>
 
 
