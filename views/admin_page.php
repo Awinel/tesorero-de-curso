@@ -15,7 +15,7 @@ checkClientAccess();
 <body>
     <div class="container">
 
-        <div class="content">
+        <div class="admin-content">
             <h3>Hola Administrador</h3>
             <h1>Bienvenido</h1>
             <p>Aqui podras administrar nuevos usuarios, agregar o quitar segun corresponda</p>
