@@ -14,4 +14,11 @@ class Manager
         $stmt->execute();
         $stmt->closeCursor();
     }
+
+    // Method to modify user information
+    public static function editUserByID($userId)
+    {
+        $pdo = tesorerodecurso();
+        $sql = "UPDATE user_information SET full_name"
+    }
 }
