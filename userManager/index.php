@@ -42,18 +42,18 @@ switch ($action) {
 
         // Fetch the updated list of users after deletion
         $allUsers = User::getAllUsers();
-        include "../views/edit_form.php";
+        include "../views/delete_form.php";
         break;
 
     case 'edit':
 
-        include "../views/edit_form.php";
+        include "../views/delete_form.php";
         break;
 
-    case 'manage':
+    case 'del':
 
         $allUsers = User::getAllUsers();
-        include "../views/edit_form.php";
+        include "../views/delete_form.php";
         break;
     case 'admin':
 
@@ -63,6 +63,6 @@ switch ($action) {
     default:
 
         $allUsers = User::getAllUsers();
-        include '../views/edit_form.php';
+        include '../views/delete_form.php';
         break;
 }
