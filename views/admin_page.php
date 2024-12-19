@@ -10,6 +10,7 @@ checkClientAccess();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina de Administrador</title>
     <link rel="stylesheet" href="/tesorero-de-curso/css/main.css">
+    <script src="/tesorero-de-curso/javaScript/message.js" defer></script>
 </head>
 
 <body>
@@ -26,7 +27,9 @@ checkClientAccess();
         </div>
 
     </div>
-
+    <?php if (isset($message)) {
+        echo $message;
+    } ?>
 </body>
 
 </html>

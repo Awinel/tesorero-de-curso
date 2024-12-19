@@ -31,7 +31,7 @@ switch ($action) {
         }
 
         $sanitizeRut = sanitizeRUT($rut);
-        $checkRut = USER::checkExistingRut($rut);
+        $checkRut = USER::checkExistingRut($sanitizeRut);
 
         if ($checkRut) {
             $message = "<p class='message'>Ese rut ya ha sido registrado, por favor ocupe otro.</p>";

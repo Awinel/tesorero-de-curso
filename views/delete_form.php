@@ -10,6 +10,7 @@ checkClientAccess();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Usuario</title>
     <link rel="stylesheet" href="/tesorero-de-curso/css/main.css">
+    <script src="/tesorero-de-curso/javaScript/message.js" defer></script>
 </head>
 
 <body>

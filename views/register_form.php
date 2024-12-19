@@ -10,6 +10,7 @@ checkClientAccess();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
     <link rel="stylesheet" href="/tesorero-de-curso/css/main.css">
+    <script src="/tesorero-de-curso/javaScript/message.js" defer></script>
 </head>
 
 <body>
@@ -37,7 +38,10 @@ checkClientAccess();
             <input type="submit" name="submit" value="Registrar" class="form-btn">
             <input type="hidden" name="action" value="register">
         </form>
-        <a href="/tesorero-de-curso/account/index.php?action=admin" class="btn">Atras</a>
+        <?php if (isset($message)) {
+            echo $message;
+        } ?>
+        <a href="/tesorero-de-curso/userManager/index.php?action=admin" class="btn">Atras</a>
     </div>
 
 </body>
