@@ -18,6 +18,9 @@ checkClientAccess();
     <div class="form-container">
 
         <form action="/tesorero-de-curso/account/" method="post">
+            <?php if (isset($message)) {
+                echo $message;
+            } ?>
             <h1>Registro</h1>
             <label for="name">Nombre</label><br>
             <input type="text" name="name" require placeholder="Nombre completo" id="name" required><br>
@@ -38,9 +41,6 @@ checkClientAccess();
             <input type="submit" name="submit" value="Registrar" class="form-btn">
             <input type="hidden" name="action" value="register">
         </form>
-        <?php if (isset($message)) {
-            echo $message;
-        } ?>
         <a href="/tesorero-de-curso/userManager/index.php?action=admin" class="btn">Atras</a>
     </div>
 
