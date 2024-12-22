@@ -47,7 +47,7 @@ switch ($action) {
 
     case 'edit':
 
-        include "../views/delete_form.php";
+        include "../views/edit_form.php";
         break;
 
     case 'del':
@@ -63,6 +63,6 @@ switch ($action) {
     default:
 
         $allUsers = User::getAllUsers();
-        include '../views/delete_form.php';
+        include '../views/edit_form.php';
         break;
 }
