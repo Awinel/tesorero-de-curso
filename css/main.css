@@ -122,7 +122,7 @@ th, td {
 
 .admin-content {
     background-color: #e8e5da;
-    height: 400px;
+    height: 300px;
     border-radius: 15px;
 }
 
@@ -130,6 +130,3 @@ th, td {
     padding-top: 10px;
 }
 
-.admin-content p {
-    padding: 100px 20px 100px 20px;
-}
