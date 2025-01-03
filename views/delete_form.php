@@ -43,7 +43,6 @@ checkClientAccess();
             <?php if (isset($message)) {
                 echo $message;
             } ?>
-            <button type="submit" name="action" value="edit" class="btn">Editar Selectionado</button>
             <button type="submit" name="action" value="delete" class="btn">Borrar Seleccionados</button>
         </form>
 
