@@ -25,7 +25,7 @@ switch ($action) {
 
 
         if (empty($full_name) || empty($rut) || empty($password) || empty($user_type)) {
-            $message = "<p class='message'>Por favor rellena los datos faltantes.</p>";
+            $message = "<p class='details'>Por favor rellena los datos.</p>";
             include "../views/register_form.php";
             exit;
         }
@@ -34,7 +34,7 @@ switch ($action) {
         $checkRut = USER::checkExistingRut($sanitizeRut);
 
         if ($checkRut) {
-            $message = "<p class='message'>Ese rut ya ha sido registrado, por favor ocupe otro.</p>";
+            $message = "<p class='alert-message'>Ese rut ya ha sido registrado, favor verificar que el rut sea el correcto</p>";
             include "../views/register_form.php";
             exit;
         }
@@ -44,7 +44,7 @@ switch ($action) {
             $message = "<p class='message'>Usuario registrado con exito!</p>";
             include "../views/admin_page.php";
         } catch (Exception $e) {
-            echo "<p class='error'>Error: " . $e->getMessage() . ". Porfavor intente nuevamente.</p>";
+            $message = "<p class='error'>Error: " . $e->getMessage() . ". Porfavor intente nuevamente.</p>";
             include "../views/admin_page.php";
         }
         break;
@@ -57,7 +57,7 @@ switch ($action) {
 
 
         if (empty($sanitizeRut) || empty($password)) {
-            $message = "<p class='message'>Por favor rellena los datos faltantes.</p>";
+            $message = "<p class='alert-message'>Por favor rellena los datos faltantes.</p>";
             include "../views/login_form.php";
             exit;
         }
@@ -65,7 +65,7 @@ switch ($action) {
         $user_information = USER::findByRUT($sanitizeRut);
 
         if ($user_information === false) {
-            $message = "<p class='message'>No hay usuario con ese rut de alumno. Por favor contacta al tesorero para crear el usuario.</p>";
+            $message = "<p class='alert-message'>No hay usuario con ese rut de alumno. Por favor contacta al tesorero para crear el usuario.</p>";
             include "../views/login_form.php";
             exit;
         }
@@ -73,7 +73,7 @@ switch ($action) {
 
         if (!$hashCheck) {
             // Password mismatch
-            $message = "<p class='message'>La contraseña es incorrecta, por favor vuelve a intentar.</p>";
+            $message = "<p class='alert-message'>La contraseña es incorrecta, por favor vuelve a intentar.</p>";
             include "../views/login_form.php";
             exit;
         }

@@ -18,10 +18,10 @@ checkClientAccess();
     <div class="form-container">
 
         <form action="/tesorero-de-curso/account/" method="post">
+            <h1>Registro</h1>
             <?php if (isset($message)) {
                 echo $message;
             } ?>
-            <h1>Registro</h1>
             <label for="name">Nombre</label><br>
             <input type="text" name="name" require placeholder="Nombre completo" id="name" required><br>
 

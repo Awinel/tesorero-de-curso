@@ -12,6 +12,17 @@ body {
     background-color: #648DE5;
 }
 
+.alert-message {
+    background-color: #d48215;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    display: none; /* Initially hidden */
+    animation: fadeIn 1s ease-in-out;
+}
+
 .message {
     position: absolute;
     top: 50%;
@@ -21,9 +32,32 @@ body {
     color: white;
     text-align: center;
     padding: 10px;
+    border-radius: 15px;
     display: none; /* Initially hidden */
+    animation: fadeIn 1s ease-in-out; 
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-in-out;
+}
 
 /* -------------------form----------------------- */
 
@@ -130,3 +164,6 @@ th, td {
     padding-top: 10px;
 }
 
+.admin-content a {
+    color: black;
+}

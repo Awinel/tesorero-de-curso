@@ -28,7 +28,7 @@ switch ($action) {
         }
 
         if (empty($selectedUsers)) {
-            $message = "<p class='message'>Selecciona al menos un usuario antes de intentar borrar.</p>";
+            $message = "<p class='alert-message'>Selecciona al menos un usuario antes de intentar borrar.</p>";
         } else {
             try {
                 foreach ($selectedUsers as $userId) {
