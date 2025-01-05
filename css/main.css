@@ -12,11 +12,17 @@ body {
     background-color: #648DE5;
 }
 
+h1, h2 {
+    text-align: center;
+}
+
+
+
 .btn{
     margin: 10px 10px 0 10px;
     text-decoration: none;
     font-size: 20px;
-    padding: 5px;
+    padding: 5px 20px;
     border: rgb(77, 74, 74) 1px solid;
     border-radius: 10px;
     background-color: #eceff3;
@@ -75,6 +81,13 @@ body {
     animation: fadeOut 1s ease-in-out;
 }
 
+.title {
+    background-color: #e8e5da;
+}
+
+/* -------------------login----------------------- */
+
+
 /* -------------------form----------------------- */
 
 .form-container {
@@ -83,13 +96,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
 }
 
 
 form {
     background-color: #eceff3;
     padding: 20px;
-    border-radius: 15px;
     margin: 5px 0;
 }
 
@@ -130,10 +143,6 @@ select {
     align-items: center;
 }
 
-h1, h2 {
-    text-align: center;
-}
-
 table {
     background-color:#eceff3;
     text-align: center;
@@ -144,11 +153,6 @@ th, td {
     padding: 5px;
 }
 
-.table-container .form-container {
-    justify-content: start;
-    height: auto;
-}
-
 .table-container form {
     background-color: #648DE5;
     text-align: center;
@@ -157,15 +161,9 @@ th, td {
 
 /* -------------------------admin-------------------- */
 
-.container {
-    text-align: center;
-    margin: 50px;
-}
-
 .admin-content {
-    background-color: #e8e5da;
-    border-radius: 15px;
-    margin: auto;
+    background-color: #eceff3;
+    margin: 20% auto;
     max-width: 600px;
 }
 
@@ -195,8 +193,31 @@ th, td {
 
 /* ------------------Edit--------------------- */
 
-#editor-back {
-    position: relative;
-    top: 10px;
-    bottom: 100px;
+.container a {
+text-align: center;
+}
+
+#edit-information {
+    margin-top: 20%;
+}
+
+#edit-form {
+    max-width: 545px;
+    margin: auto;
+    border-radius: 0;
+}
+
+#edit-form .btn {
+    display: block;
+    margin: auto;
+}
+
+.container {
+    margin: 10px 10px;
+}
+
+#edit-btn {
+    display: flex;
+    justify-content: center;
+    margin: 10px 45%;
 }

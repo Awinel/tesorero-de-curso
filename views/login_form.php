@@ -11,7 +11,7 @@
 
 <body>
 
-    <div class="form-container">
+    <div class="form-container" id="login-form">
 
         <form action="/tesorero-de-curso/account/" method="post">
             <h1>Inicio de sesión</h1>

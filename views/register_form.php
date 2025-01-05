@@ -14,7 +14,7 @@ checkClientAccess();
 </head>
 
 <body>
-    <h1>Registro</h1>
+    <h1 class="title">Registro</h1>
     <div class="form-container">
         <form action="/tesorero-de-curso/account/" method="post">
             <?php if (isset($message)) {

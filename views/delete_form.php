@@ -14,7 +14,7 @@ checkClientAccess();
 </head>
 
 <body>
-    <h1>Usuarios Registrados</h1>
+    <h1 class="title">Usuarios Registrados</h1>
     <div class="form-container">
         <div class="table-container">
             <form method="POST" action="/tesorero-de-curso/userManager/">
