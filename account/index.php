@@ -25,7 +25,7 @@ switch ($action) {
 
 
         if (empty($full_name) || empty($rut) || empty($password) || empty($user_type)) {
-            $message = "<p class='details'>Por favor rellena los datos.</p>";
+            $message = "<p class='alert-message'>Por favor rellena los datos faltantes.</p>";
             include "../views/register_form.php";
             exit;
         }

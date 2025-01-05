@@ -27,11 +27,12 @@ body {
     background-color: #282c36;
     color: white;
 }
+
 .alert-message {
     background-color: #d48215;
     color: white;
     text-align: center;
-    padding: 15px 5px;
+    padding: 5px 5px;
     margin-bottom: 15px;
     border-radius: 15px;
     display: none; /* Initially hidden */
@@ -40,7 +41,7 @@ body {
 
 .message {
     position: absolute;
-    top: 50%;
+    top: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #4CAF50;
