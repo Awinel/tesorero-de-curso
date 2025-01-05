@@ -23,7 +23,7 @@ checkClientAccess();
             <div class="btn-container">
                 <a href="/tesorero-de-curso/account/index.php?action=register" class="btn">Registrar</a>
                 <a href="/tesorero-de-curso/userManager/index.php?action=del" class="btn">Eliminar</a>
-                <a href="/tesorero-de-curso/userManager/index.php?action=edit" class="btn">Editar</a>
+                <a href="/tesorero-de-curso/userManager/index.php?action=editor" class="btn">Editar</a>
                 <a href="/tesorero-de-curso/account/index.php?action=logout" class="btn">Salir</a>
             </div>
         </div>

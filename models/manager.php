@@ -43,4 +43,16 @@ class Manager
             throw new Exception("Error updating user: " . $e->getMessage());
         }
     }
+
+    public static function getUserById($userId)
+    {
+        $pdo = tesorerodecurso();
+        $sql = "SELECT * FROM user_information WHERE user_id = :user_id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':user_id', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $user;
+    }
 }

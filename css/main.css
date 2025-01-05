@@ -85,17 +85,12 @@ body {
     height: 100vh;
 }
 
+
 form {
     background-color: #eceff3;
     padding: 20px;
     border-radius: 15px;
     margin: 5px 0;
-}
-
-form h1 {
-    margin-bottom: 30px;
-    font-weight: 700;
-    text-align: center;
 }
 
 form p {
@@ -196,4 +191,12 @@ th, td {
 .admin-content a {
     margin: 10px 0;
     width: 100%;
+}
+
+/* ------------------Edit--------------------- */
+
+#editor-back {
+    position: relative;
+    top: 10px;
+    bottom: 100px;
 }
