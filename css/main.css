@@ -47,7 +47,7 @@ h1, h2 {
 
 .message {
     position: absolute;
-    top: 5%;
+    top: 60px;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #4CAF50;
@@ -219,5 +219,5 @@ text-align: center;
 #edit-btn {
     display: flex;
     justify-content: center;
-    margin: 10px 45%;
+    margin: 10px 40%;
 }

@@ -52,7 +52,7 @@ switch ($action) {
             $message = "<p class='alert-message'>Selecciona un usuario antes de intentar editar.</p>";
             $allUsers = User::getAllUsers();
             include "../views/edit_form.php";
-            break;
+            exit;
         }
 
         $user = Manager::getUserById($selectedUserId);
@@ -67,24 +67,27 @@ switch ($action) {
         $rut = filter_input(INPUT_POST, 'rut', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $user_type = filter_input(INPUT_POST, 'user_type', FILTER_SANITIZE_NUMBER_INT);
 
-        $checkRut = USER::checkExistingRut($rut);
+        $currentUser = Manager::getUserById($userId);
 
-        if ($checkRut) {
-            $message = "<p class='alert-message'>Ese rut ya ha sido registrado, favor verificar que el rut sea el correcto</p>";
+        if (empty($userId) || empty($full_name) || empty($rut) || empty($user_type)) {
+            $message = "<p class='alert-message'>Por favor rellena todos los campos.</p>";
             $allUsers = User::getAllUsers();
             include "../views/edit_form.php";
             exit;
         }
 
+
         try {
             $result = Manager::editUser($userId, $full_name, $rut, $user_type);
-            $message = "<p class='message'>Usuario editado con exito!</p>";
+            $message = "<p class='message'>Usuario editado con éxito!</p>";
             $allUsers = User::getAllUsers();
             include "../views/edit_form.php";
+            exit;
         } catch (Exception $e) {
-            $message = "<p class='error'>Error: " . $e->getMessage() . ". Porfavor intente nuevamente.</p>";
+            $message = "<p class='error'>Error: " . htmlspecialchars($e->getMessage()) . ". Por favor intente nuevamente.</p>";
             $allUsers = User::getAllUsers();
             include "../views/edit_form.php";
+            exit;
         }
         break;
 
@@ -93,6 +96,7 @@ switch ($action) {
         $allUsers = User::getAllUsers();
         include "../views/delete_form.php";
         break;
+
     case 'admin':
 
         include "../views/admin_page.php";

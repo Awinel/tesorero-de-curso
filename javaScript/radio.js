@@ -7,12 +7,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     radios.forEach(radio => {
         radio.addEventListener('change', function() {
+            console.log('Radio selected with value: ' + this.value); // Log the selected radio's value
             if (this.checked) {
                 const selectedUser = allUsers.find(user => user.user_id == this.value);
-                userIdInput.value = selectedUser.user_id;
-                fullNameInput.value = selectedUser.full_name;
-                rutInput.value = selectedUser.rut;
-                userTypeSelect.value = selectedUser.user_type;
+                if (selectedUser) {
+                    userIdInput.value = selectedUser.user_id;
+                    fullNameInput.value = selectedUser.full_name;
+                    rutInput.value = selectedUser.rut;
+                    userTypeSelect.value = selectedUser.user_type;
+                }
             }
         });
     });
